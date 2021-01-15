@@ -1,0 +1,15 @@
+export default {
+  tenantID: "3055d663-3f92-4f14-ac62-87c12c41e5a2",
+  clientID: "f8448b53-2326-4c77-911d-343d80d393e7",
+  audience: "f8448b53-2326-4c77-911d-343d80d393e7",
+  authority: "login.microsoftonline.com",
+  policyName: "B2C_1_sign_in_sign_up",
+  tenantName: "collegehubapp",
+  version: "v2.0",
+  discovery: ".well-known/openid-configuration",
+  scope: ["openid"],
+  validateIssuer: false,
+  passReqToCallback: false,
+  loggingLevel: "info",
+  isB2C: true,
+};

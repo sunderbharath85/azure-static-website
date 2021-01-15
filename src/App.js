@@ -6,7 +6,11 @@ function App() {
   const [text, setText] = useState("");
   useEffect(() => {
     (async () => {
-      let { message } = await (await fetch(`/api/GetMessages`)).json();
+      const headers = new Headers();
+      const token = window.sessionStorage.getItem("msal.f8448b53-2326-4c77-911d-343d80d393e7.idtoken");
+      console.log(token);
+      headers.append("Authorization", `Bearer ${token}`)
+      let { message } = await (await fetch(`/api/GetMessages`, { headers })).json();
       setText(message);
     })();
   });
