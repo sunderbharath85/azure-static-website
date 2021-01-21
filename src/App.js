@@ -7,10 +7,10 @@ function App() {
   useEffect(() => {
     (async () => {
       const headers = new Headers();
+      const url = process.env.NODE_ENV === "development" ? "/api/products" : "https://nest-azure-sample.azurewebsites.net/api/products"
       const token = window.sessionStorage.getItem("msal.f8448b53-2326-4c77-911d-343d80d393e7.idtoken");
-      console.log(token);
       headers.append("Authorization", `Bearer ${token}`)
-      let { message } = await (await fetch(`/api/GetMessages`, { headers })).json();
+      let { message } = await (await fetch(url, { headers })).json();
       setText(message);
     })();
   });
